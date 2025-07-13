@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecole Methodist Umusing Wubumenyi - Our Vision</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #d4ac0d;
+            --accent-color: #7d6608;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #154360);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        /* Vision Section */
+        .vision-section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 1rem auto;
+        }
+        
+        /* Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .card-text {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Feature List */
+        .feature-list {
+            list-style-type: none;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            color: var(--success-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Main Vision Card */
+        .main-vision-card {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+            margin-bottom: 4rem;
+        }
+        
+        .main-vision-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .main-vision-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: white;
+        }
+        
+        .main-vision-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Future Building Card */
+        .future-building-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 4rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .future-building-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .future-building-text {
+            max-width: 800px;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .footer-text {
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.8;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: rgb(14, 3, 121);
+            color: white;
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+            border-radius: 10px;
+            background: #fff;
+            padding: 3px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .school-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .school-motto {
+            font-size: 0.95rem;
+            color: #ffe066;
+        }
+        
+        /* Navigation Styles */
+        .nav {
+            background: rgb(14, 3, 121);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1000;
+        }
+        
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+            margin: 0;
+            gap: 2rem;
+        }
+        
+        .nav-item {
+            margin: 0;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--light-color, #eeeeee);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-link.active,
+        .nav-link:hover {
+            color: var(--secondary-color, #d4ad10);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-vision-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-vision-img {
+                height: 300px;
+            }
+            
+            .future-building-card {
+                padding: 2rem;
+            }
+            
+            .future-building-title {
+                font-size: 2rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+            
+            .nav-item {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="FMUU Logo" class="logo">
+                <div>
+                    <div class="school-name">ECOLE METHODISTE UMUSING WUBUMENYI</div>
+                    <div class="school-motto">Gutegura abanyeshuri kuba abayobozi b'ejo hazaza</div>
+                </div>
+            </div>
+            <img src="logo.jpg" alt="School Seal" class="logo">
+        </div>
+    </header>
+    
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Ahabanza</a></li>
+                <li class="nav-item"><a href="mission.html" class="nav-link">Intego</a></li>
+                <li class="nav-item"><a href="vision.html" class="nav-link active">Icyerekezo</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Twandikire</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <header>
+        <div class="container">
+            <h1>Ecole Methodist Umusing Wubumenyi</h1>
+            <p class="subtitle">Shaping futures through faith, knowledge, and community since our founding</p>
+        </div>
+    </header>
+    
+    <section class="vision-section">
+        <div class="container">
+            <h2 class="section-title">Our Vision for Excellence</h2>
+            
+            <!-- Main Vision Card -->
+            <div class="card main-vision-card">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Students learning" class="main-vision-img">
+                <div class="main-vision-content">
+                    <h3 class="main-vision-title">Our Guiding Vision</h3>
+                    <p>At Ecole Methodist Umusing Wubumenyi, we envision a transformative educational environment that nurtures holistic development, fosters spiritual growth, and cultivates academic excellence. Our mission is to empower students to become ethical leaders, critical thinkers, and compassionate citizens who will positively impact their communities and the world.</p>
+                    <p>We believe in education that transcends the classroom, integrating faith, knowledge, and service to create well-rounded individuals prepared for the challenges of tomorrow.</p>
+                </div>
+            </div>
+            
+            <!-- Grid of Vision Components -->
+            <div class="grid-container">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Academic Excellence" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Academic Excellence</h3>
+                        <p class="card-text">Our rigorous curriculum is designed to challenge students while providing the support they need to succeed.</p>
+                        <ul class="feature-list">
+                            <li>STEM-focused programs</li>
+                            <li>Innovative teaching methods</li>
+                            <li>Personalized learning plans</li>
+                            <li>University preparation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Spiritual Foundation" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Spiritual Foundation</h3>
+                        <p class="card-text">We integrate Methodist values into all aspects of school life to develop moral character.</p>
+                        <ul class="feature-list">
+                            <li>Daily devotion and prayer</li>
+                            <li>Values-based education</li>
+                            <li>Community service programs</li>
+                            <li>Ethical leadership training</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Holistic Development" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Holistic Development</h3>
+                        <p class="card-text">We nurture the complete child through diverse extracurricular opportunities.</p>
+                        <ul class="feature-list">
+                            <li>Sports and athletics programs</li>
+                            <li>Arts and music education</li>
+                            <li>Debate and public speaking</li>
+                            <li>Entrepreneurship clubs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Community Engagement" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Community Engagement</h3>
+                        <p class="card-text">We believe in strong partnerships between school, family, and community.</p>
+                        <ul class="feature-list">
+                            <li>Parent-teacher associations</li>
+                            <li>Local business partnerships</li>
+                            <li>Alumni networks</li>
+                            <li>Outreach programs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Future Building Card -->
+            <div class="card future-building-card">
+                <h3 class="future-building-title">Our Future Campus</h3>
+                <p class="future-building-text">As part of our vision for the future, we are planning to construct a state-of-the-art campus facility that will provide our students with world-class learning environments. The new buildings will feature modern classrooms, science laboratories, a library, sports facilities, and spaces for worship and community gatherings.</p>
+                <p class="future-building-text">This ambitious project represents our commitment to providing the best possible education for generations to come.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Ecole Methodist Umusing Wubumenyi</div>
+            <p class="footer-text">Preparing students for life, leadership, and service through academic excellence and spiritual growth.</p>
+            <p>&copy; 2023 Ecole Methodist Umusing Wubumenyi. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

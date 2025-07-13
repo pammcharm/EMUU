@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecole Methodist Umusing Wubumenyi - Intego yacu</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #d4ac0d;
+            --accent-color: #7d6608;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #154360);
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 80px;
+            width: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            background: #fff;
+            padding: 4px;
+            margin-right: 15px;
+            object-fit: contain;
+            transition: box-shadow 0.3s;
+        }
+        .logo:last-child {
+            margin-right: 0;
+        }
+        @media (max-width: 768px) {
+            .logo {
+                height: 60px;
+                margin-right: 8px;
+            }
+        }
+        
+        .school-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .school-motto {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+            font-size: 2.2rem;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 1rem auto;
+        }
+        
+        /* Mission Cards */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .mission-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+        
+        .mission-card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .mission-card-text {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Core Values */
+        .values-section {
+            background: linear-gradient(rgba(26, 82, 118, 0.9), rgba(26, 82, 118, 0.9)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .values-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .value-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .value-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text {
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Navigation Styles */
+        .nav {
+            background: rgb(14, 3, 121);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+        }
+        
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+        }
+        
+        .nav-item {
+            margin: 0 1.5rem;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--light-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-color);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-bottom: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .mission-card {
+                padding: 1.5rem;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="FMUU Logo" class="logo">
+                <div>
+                    <div class="school-name">ECOLE METHODISTE UMUSING WUBUMENYI</div>
+                    <div class="school-motto">Gutegura abanyeshuri kuba abayobozi b'ejo hazaza</div>
+                </div>
+            </div>
+            <img src="logo.jpg" alt="School Seal" class="logo">
+        </div>
+    </header>
+    
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Ahabanza</a></li>
+                <li class="nav-item"><a href="mission.html" class="nav-link active">Intego</a></li>
+                 <li class="nav-item"><a href="vision.html" class="nav-link active">Icyerekezo</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Twandikire</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Your mission page content starts here -->
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="section-title">INTEGO Y'ISOMERO RYACU</h2>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <img src="img6.jpg" alt="Mission" class="mission-icon">
+                    <h3 class="mission-card-title">Intego yacu</h3>
+                    <p class="mission-card-text">
+                        Intego yacu ni ugutegura abanyeshuri bacu kuba abantu bakiranuka, 
+                        bafite ubumenyi bw'ingenzi, bakagira umutima wo gufasha abandi, 
+                        kandi bakaba abayobozi b'intege nke mu muryango, mu rwego rw'igihugu 
+                        no ku rwego mpuzamahanga.
+                    </p>
+                </div>
+                
+                <div class="mission-card">
+                    <i class="fas fa-eye mission-icon" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    <h3 class="mission-card-title">Aho tugeze</h3>
+                    <p class="mission-card-text">
+                        Tugeze mu rwego rwo gutanga uburezi burambye bushobora gufasha 
+                        umwana wese kubona ubushobozi bwe, gutera imbere mu buzima bwe, 
+                        no kugira uruhare mu iterambere ry'igihugu.
+                    </p>
+                </div>
+                
+                <div class="mission-card">
+                    <i class="fas fa-bullseye mission-icon" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    <h3 class="mission-card-title">Icyerekezo cyacu</h3>
+                    <p class="mission-card-text">
+                        Kuba isomero ryizewe mu gutanga uburezi bw'igezeho, 
+                        bukoresha ikoranabuhanga, bukaba bukomeje kwigisha 
+                        indangagaciro zo kwubahisha Imana, gukunda igihugu, 
+                        no gukunda abandi nk'uko twikunda ubwacu.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="values-section">
+        <div class="container">
+            <h2 class="values-title">INDANGAGACIRO Z'ISOMERO RYACU</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-church"></i></div>
+                    <h3>Ukwizera</h3>
+                    <p>Dukomeza kwizera Imana no kuyubahisha mu byose dukora</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Uburezi</h3>
+                    <p>Twizihiza uburezi nk'ingirakamaro mu iterambere ry'umuntu</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-hands-helping"></i></div>
+                    <h3>Ubumwe</h3>
+                    <p>Dukora hamwe mu ruhare, mu bwumvane no mu mwizerano</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Uburinganire</h3>
+                    <p>Twizera ko abantu bose bafite uburenganzira bungana</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Ubuntu</h3>
+                    <p>Twibanda ku mico y'ubuntu n'urukundo mu mibereho yacu yose</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <img src="logo.jpg" alt="FMUU Logo" class="footer-logo">
+            <p class="footer-text">
+                Ecole Methodist Umusing Wubumenyi<br>
+                Gutegura abanyeshuri kuba abayobozi b'intege nke bafite ubumenyi n'indangagaciro
+            </p>
+            
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <p>&copy; 2023 Ecole Methodist Umusing Wubumenyi. Byose aribyacu.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple animation for mission cards when they come into view
+        const missionCards = document.querySelectorAll('.mission-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        missionCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Animate value items sequentially
+        const valueItems = document.querySelectorAll('.value-item');
+        
+        const valueObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'scale(1)';
+                    }, index * 100);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        valueItems.forEach(item => {
+            item.style.opacity = 0;
+            item.style.transform = 'scale(0.8)';
+            item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            valueObserver.observe(item);
+        });
+        
+        // Current year for footer
+        document.querySelector('footer p:last-child').innerHTML = `&copy; ${new Date().getFullYear()} Ecole Methodist Umusing Wubumenyi. Byose aribyacu.`;
+    </script>
+</body>
+</html>
